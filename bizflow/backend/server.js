@@ -11,7 +11,7 @@ const inventoryRoutes = require('./routes/inventory');
 const orderRoutes = require('./routes/orders');
 
 // Import simulation function
-const generateOrder = require('./simulation/services/ordergenerator');
+//const generateOrder = require('./simulation/services/ordergenerator');
 
 // Create Express app
 const app = express();
@@ -51,9 +51,9 @@ app.use('/api/orders', orderRoutes);
 // ======================
 
 // Every 5 seconds create a fake order
-setInterval(() => {
-    generateOrder();
-}, 15000);
+// setInterval(() => {
+//     generateOrder();
+// }, 15000);
 
 
 // ======================
