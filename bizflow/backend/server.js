@@ -22,7 +22,14 @@ const app = express();
 // ======================
 
 // Allow frontend to communicate with backend
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://your-vercel-domain.vercel.app'
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 
 // Parse incoming JSON data
 app.use(express.json());
