@@ -3,12 +3,14 @@ const router = express.Router();
 
 const Order = require('../models/order');
 
+
 // GET all orders
 router.get('/', async (req, res) => {
 
     try {
 
-        const orders = await Order.find();
+        const orders = await Order.find()
+            .sort({ createdAt: -1 });
 
         res.json(orders);
 
@@ -17,7 +19,9 @@ router.get('/', async (req, res) => {
         res.status(500).json({
             message: error.message
         });
+
     }
+
 });
 
 
@@ -27,9 +31,13 @@ router.post('/', async (req, res) => {
     try {
 
         const newOrder = new Order({
+
             customer: req.body.customer,
-            product: req.body.product,
+
+            items: req.body.items,
+
             amount: req.body.amount
+
         });
 
         const savedOrder = await newOrder.save();
@@ -41,7 +49,9 @@ router.post('/', async (req, res) => {
         res.status(500).json({
             message: error.message
         });
+
     }
+
 });
 
 module.exports = router;
