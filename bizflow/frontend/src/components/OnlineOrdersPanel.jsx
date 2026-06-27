@@ -1,4 +1,36 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 function OnlineOrdersPanel() {
+
+    const [orders, setOrders] = useState([]);
+
+    const fetchOrders = async () => {
+    try {
+        const response = await axios.get(
+            'https://bizflow-production-4740.up.railway.app/api/orders'
+        );
+
+        console.log("Orders from backend:", response.data);
+
+        setOrders(response.data);
+
+    } catch (error) {
+        console.log("Error fetching orders:", error);
+    }
+};
+
+    useEffect(() => {
+
+        fetchOrders();
+
+        const interval = setInterval(() => {
+            fetchOrders();
+        }, 5000);
+
+        return () => clearInterval(interval);
+
+    }, []);
 
     return (
 
@@ -6,11 +38,21 @@ function OnlineOrdersPanel() {
 
             <h2>🛒 Online Orders</h2>
 
-            <p>Amazon : 15 Orders</p>
-            <p>Flipkart : 9 Orders</p>
-            <p>Shopify : 20 Orders</p>
-            <p>Website : 7 Orders</p>
-            <p>Meesho : 4 Orders</p>
+            <p>Total Orders: {orders.length}</p>
+
+            {orders.slice(-5).map((order) => (
+
+                <div key={order._id}>
+
+                    <p>
+                        {order.customer} ordered {' '}
+                        {order.items[0].productName} {' '}
+                        (Qty: {order.items[0].quantity})
+                    </p>
+
+                </div>
+
+            ))}
 
         </div>
 
