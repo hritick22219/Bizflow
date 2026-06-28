@@ -78,17 +78,17 @@
 /* ================= GRID ================= */
 .dashboardGrid {
     display: grid;
-    grid-template-columns: 28% 42% 30%;
-    gap: 15px;
-    height: calc(100vh - 180px);
+    grid-template-columns: 1fr 1.4fr 1fr;
+    gap: 20px;
+    align-items: start;
 }
 
 .leftColumn,
 .middleColumn,
 .rightColumn {
-    display: grid;
-    gap: 15px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .leftColumn {
@@ -248,26 +248,64 @@
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:1200px){
+/* Large laptops */
+@media (max-width: 1600px) {
 
-    .statsContainer{
-        grid-template-columns: repeat(2,1fr);
+    .dashboardGrid {
+        grid-template-columns: 30% 40% 30%;
     }
 
-    .dashboardGrid{
-        grid-template-columns:1fr;
+    .statsContainer {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
-@media(max-width:768px){
+/* Small laptops */
+@media (max-width: 1366px) {
 
-    .statsContainer{
-        grid-template-columns:1fr;
+    .dashboard {
+        padding: 15px;
     }
 
-    .header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:15px;
+    .statsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboardGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rightColumn {
+        grid-column: span 2;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+    .statsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboardGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .statsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
     }
 }
