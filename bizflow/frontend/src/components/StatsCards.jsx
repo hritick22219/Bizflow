@@ -42,33 +42,33 @@ function StatsCards() {
 
         <div className="statsContainer">
 
-            {cards.map((card, i) => (
+    {cards.map((card, i) => (
 
-                <div
-                    key={i}
-                    className="statCard"
-                >
+        <div
+            key={i}
+            className="statCard"
+        >
 
-                    <div
-                        className="iconBox"
-                        style={{ background: card.color }}
-                    >
-                        {card.icon}
-                    </div>
+            <div
+                className="iconBox"
+                style={{ background: card.color }}
+            >
+                {card.icon}
+            </div>
 
-                    <div>
+            <div className="statsContent">
 
-                        <p>{card.title}</p>
+                <p>{card.title}</p>
 
-                        <h2>{card.value}</h2>
+                <h2>{card.value}</h2>
 
-                    </div>
-
-                </div>
-
-            ))}
+            </div>
 
         </div>
+
+    ))}
+
+</div>
 
     );
 }

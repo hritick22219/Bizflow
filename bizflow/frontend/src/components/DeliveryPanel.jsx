@@ -20,9 +20,8 @@ const styles = {
     card: {
         backgroundColor: '#ffffff',
         padding: '20px',
-        borderRadius: '10px',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-        minHeight: '400px'
+        borderRadius: '20px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.05)'
     }
 };
 

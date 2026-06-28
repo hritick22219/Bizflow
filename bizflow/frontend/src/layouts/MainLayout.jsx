@@ -6,7 +6,6 @@ import InventoryExpiry from '../components/InventoryExpiry';
 import OrderMap from '../components/OrderMap';
 import DeliveryPanel from '../components/DeliveryPanel';
 import OnlineOrdersPanel from '../components/OnlineOrdersPanel';
-import SalesOverview from '../components/SalesOverview';
 
 function MainLayout() {
     return (
@@ -16,18 +15,30 @@ function MainLayout() {
 
             <div className="header">
 
-                <div>
-                    <h1>BizFlow Dashboard</h1>
+                <div className="headerLeft">
+                    <h1>Dashboard</h1>
 
                     <p>
-                        Real-time overview of inventory,
+                        Real-time overview of your inventory,
                         orders, deliveries & sales
                     </p>
                 </div>
 
-                <button className="exportBtn">
-                    Export Report
-                </button>
+                <div className="headerRight">
+
+                    <button className="dateBtn">
+                        28 May 2025
+                    </button>
+
+                    <button className="notificationBtn">
+                        🔔
+                    </button>
+
+                    <button className="exportBtn">
+                        Export Report
+                    </button>
+
+                </div>
 
             </div>
 
@@ -66,8 +77,6 @@ function MainLayout() {
                 <div className="rightColumn">
 
                     <OnlineOrdersPanel />
-
-                    <SalesOverview />
 
                 </div>
 

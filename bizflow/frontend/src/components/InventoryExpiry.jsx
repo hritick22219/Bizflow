@@ -9,39 +9,33 @@ function InventoryExpiry() {
 
     return (
 
-        <div>
+        <div className="panel expiryPanel">
 
-            <h2>⚠ Inventory Expiry</h2>
+            <div className="panelHeader">
+                <h2>⚠️ Inventory Expiry</h2>
+            </div>
 
-            {items.map((item, index) => (
+            {
+                items.map((item, index) => (
 
-                <div
-                    key={index}
-                    style={styles.item}
-                >
+                    <div
+                        key={index}
+                        className="expiryItem"
+                    >
+                        <span>{item.name}</span>
 
-                    <span>{item.name}</span>
+                        <span className="expiryDays">
+                            Expires in {item.days} days
+                        </span>
 
-                    <span style={{ color: 'orange' }}>
-                        Expires in {item.days} days
-                    </span>
+                    </div>
 
-                </div>
-
-            ))}
+                ))
+            }
 
         </div>
+
     );
 }
-
-const styles = {
-
-    item: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '14px 0',
-        borderBottom: '1px solid #e2e8f0'
-    }
-};
 
 export default InventoryExpiry;

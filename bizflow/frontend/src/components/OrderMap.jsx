@@ -1,38 +1,40 @@
 function OrderMap() {
 
     return (
-        <div>
 
-            <h2 style={styles.heading}>
-                🗺️ Live Order Map
-            </h2>
+        <div className="panel">
+
+            <div className="panelHeader">
+                <h2>🗺️ Live Order Map</h2>
+                <span>View Full Map</span>
+            </div>
 
             <iframe
-                title="map"
+                title="Live Map"
+                src="https://maps.google.com/maps?q=Delhi&t=&z=11&ie=UTF8&iwloc=&output=embed"
                 width="100%"
-                height="100%"
+                height="310"
                 style={{
-                minHeight: '250px',
-                height: '35vh',
-                border: 'none',
-                borderRadius: '16px'
-    }}
-/>
+                    border: 'none',
+                    borderRadius: '18px'
+                }}
+                loading="lazy"
+            />
 
             <div className="mapStats">
 
                 <div className="mapStatCard">
-                    <h3>25</h3>
+                    <h2>25</h2>
                     <p>Delivered</p>
                 </div>
 
                 <div className="mapStatCard">
-                    <h3>18</h3>
+                    <h2>18</h2>
                     <p>In Transit</p>
                 </div>
 
                 <div className="mapStatCard">
-                    <h3>7</h3>
+                    <h2>7</h2>
                     <p>Pending</p>
                 </div>
 
@@ -41,32 +43,5 @@ function OrderMap() {
         </div>
     );
 }
-
-const styles = {
-
-    heading: {
-        marginBottom: '20px'
-    },
-
-    map: {
-        borderRadius: '12px',
-        border: 'none'
-    },
-
-    stats: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3,1fr)',
-        gap: '10px',
-        marginTop: '12px'
-    },
-
-    statCard: {
-        textAlign: 'center',
-        padding: '10px',
-        background: 'linear-gradient(135deg,#2563eb,#3b82f6)',
-        color: '#fff',
-        borderRadius: '12px'
-        }
-};
 
 export default OrderMap;
