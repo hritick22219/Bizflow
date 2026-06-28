@@ -1,6 +1,6 @@
 import InventoryPanel from '../components/InventoryPanel';
 import InventoryExpiry from '../components/InventoryExpiry';
-import TopSelling from '../components/TopSelling';
+
 import OrderMap from '../components/OrderMap';
 import DeliveryPanel from '../components/DeliveryPanel';
 import OnlineOrdersPanel from '../components/OnlineOrdersPanel';
