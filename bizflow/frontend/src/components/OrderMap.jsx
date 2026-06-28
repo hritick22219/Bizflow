@@ -10,7 +10,7 @@ function OrderMap() {
             <iframe
                 title="map"
                 width="100%"
-                height="250"
+                height="220"
                 style={styles.map}
                 src="https://maps.google.com/maps?q=Delhi&t=&z=11&ie=UTF8&iwloc=&output=embed"
             />
