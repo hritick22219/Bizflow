@@ -1,38 +1,32 @@
-import DeliveryPanel from '../components/DeliveryPanel';
+import StatsCards from '../components/StatsCards';
 import InventoryPanel from '../components/InventoryPanel';
+import InventoryExpiry from '../components/InventoryExpiry';
+import OrderMap from '../components/OrderMap';
+import DeliveryPanel from '../components/DeliveryPanel';
 import OnlineOrdersPanel from '../components/OnlineOrdersPanel';
 
 function Dashboard() {
-
     return (
+        <div className="dashboard-container" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <StatsCards />
 
-        <div>
+            <div className="dashboard-grid">
+                <div className="col-left" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <InventoryPanel />
+                    <InventoryExpiry />
+                </div>
 
-            <h1>BizFlow Dashboard</h1>
+                <div className="col-center" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <OrderMap />
+                    <DeliveryPanel />
+                </div>
 
-            <div style={styles.grid}>
-
-                <DeliveryPanel />
-
-                <InventoryPanel />
-
-                <OnlineOrdersPanel />
-
+                <div className="col-right" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <OnlineOrdersPanel />
+                </div>
             </div>
-
         </div>
     );
 }
-
-const styles = {
-
-    grid: {
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr 1fr',
-        gap: '20px',
-        marginTop: '20px'
-    }
-
-};
 
 export default Dashboard;

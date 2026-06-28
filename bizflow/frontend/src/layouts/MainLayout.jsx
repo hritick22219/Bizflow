@@ -1,22 +1,28 @@
+import './MainLayout.css';
+
+import StatsCards from '../components/StatsCards';
 import InventoryPanel from '../components/InventoryPanel';
 import InventoryExpiry from '../components/InventoryExpiry';
-
 import OrderMap from '../components/OrderMap';
 import DeliveryPanel from '../components/DeliveryPanel';
 import OnlineOrdersPanel from '../components/OnlineOrdersPanel';
 import SalesOverview from '../components/SalesOverview';
-import StatsCards from '../components/StatsCards';
-import './MainLayout.css';
+
 function MainLayout() {
     return (
-
         <div className="dashboard">
+
+            {/* Header */}
 
             <div className="header">
 
                 <div>
-                    <h1>Dashboard</h1>
-                    <p>Real-time overview of inventory, orders and sales</p>
+                    <h1>BizFlow Dashboard</h1>
+
+                    <p>
+                        Real-time overview of inventory,
+                        orders, deliveries & sales
+                    </p>
                 </div>
 
                 <button className="exportBtn">
@@ -25,9 +31,15 @@ function MainLayout() {
 
             </div>
 
+            {/* KPI Cards */}
+
             <StatsCards />
 
+            {/* Main Grid */}
+
             <div className="dashboardGrid">
+
+                {/* LEFT COLUMN */}
 
                 <div className="leftColumn">
 
@@ -35,8 +47,10 @@ function MainLayout() {
 
                     <InventoryExpiry />
 
-
                 </div>
+
+
+                {/* MIDDLE COLUMN */}
 
                 <div className="middleColumn">
 
@@ -46,8 +60,15 @@ function MainLayout() {
 
                 </div>
 
+
+                {/* RIGHT COLUMN */}
+
                 <div className="rightColumn">
+
                     <OnlineOrdersPanel />
+
+                    <SalesOverview />
+
                 </div>
 
             </div>
