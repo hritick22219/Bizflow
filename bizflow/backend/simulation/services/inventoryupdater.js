@@ -11,11 +11,7 @@ async function updateInventory(order) {
             });
 
             if (!product) {
-
-                console.log(
-                    `${item.productName} not found in inventory`
-                );
-
+                console.log(`${item.productName} not found in inventory`);
                 continue;
             }
 
@@ -28,17 +24,15 @@ async function updateInventory(order) {
             await product.save();
 
             console.log(
-                `${product.productName} updated. Remaining stock: ${product.quantity}`
+                `${item.productName} inventory updated. Remaining: ${product.quantity}`
             );
-
         }
 
     } catch (error) {
 
-        console.log(error);
+        console.log('Inventory update error:', error);
 
     }
-
 }
 
 module.exports = updateInventory;

@@ -4,7 +4,8 @@ const inventorySchema = new mongoose.Schema({
 
     productName: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     quantity: {
@@ -12,19 +13,16 @@ const inventorySchema = new mongoose.Schema({
         required: true
     },
 
+    expiryDate: {
+        type: Date
+    },
+
     buyingPrice: {
-        type: Number,
-        required: true
+        type: Number
     },
 
     sellingPrice: {
-        type: Number,
-        required: true
-    },
-
-    expiryDate: {
-        type: Date,
-        required: true
+        type: Number
     }
 
 }, {
