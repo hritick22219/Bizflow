@@ -47,11 +47,7 @@ function MainLayout() {
                 </div>
 
                 <div className="rightColumn">
-
                     <OnlineOrdersPanel />
-
-                    <SalesOverview />
-
                 </div>
 
             </div>

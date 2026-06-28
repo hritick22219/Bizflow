@@ -1,24 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 
 function OnlineOrdersPanel() {
 
     const [orders, setOrders] = useState([]);
-
-    const fetchOrders = async () => {
-    try {
-        const response = await axios.get(
-            'https://bizflow-production-4740.up.railway.app/api/orders'
-        );
-
-        console.log("Orders from backend:", response.data);
-
-        setOrders(response.data);
-
-    } catch (error) {
-        console.log("Error fetching orders:", error);
-    }
-};
 
     useEffect(() => {
 
@@ -32,41 +17,92 @@ function OnlineOrdersPanel() {
 
     }, []);
 
+    const fetchOrders = async () => {
+
+        try {
+
+            const response = await api.get('/api/orders');
+
+            setOrders(response.data);
+
+        } catch (error) {
+
+            console.log(error);
+        }
+    };
+
+    const platforms = [
+        'Amazon',
+        'Flipkart',
+        'Website',
+        'Meesho'
+    ];
+
     return (
 
-        <div style={styles.card}>
+        <div className="panel">
 
-            <h2>🛒 Online Orders</h2>
+            <div className="panelHeader">
+                <h2>🛒 Orders Overview</h2>
+            </div>
 
-            <p>Total Orders: {orders.length}</p>
+            <div className="orderSummary">
 
-            {orders.slice(-5).reverse().map((order) => (
+                <div className="summaryBox">
+                    <h3>{orders.length}</h3>
+                    <p>Total Orders</p>
+                </div>
 
-                <div key={order._id}>
+                <div className="summaryBox">
+                    <h3>₹{orders.length * 120}</h3>
+                    <p>Revenue</p>
+                </div>
+
+            </div>
+
+            <h3 className="historyTitle">
+                Recent Orders
+            </h3>
+
+            {orders.slice(0, 5).map((order, index) => (
+
+                <div
+                    key={order._id}
                     className="orderCard"
-                    <p>
-                        {order.customer} ordered {' '}
-                        {order.items[0].productName} {' '}
-                        (Qty: {order.items[0].quantity})
-                    </p>
+                >
+
+                    <div>
+
+                        <strong>
+                            {order.customer}
+                        </strong>
+
+                        <p>
+                            {order.items[0].productName}
+                        </p>
+
+                        <small>
+                            Platform:
+                            {' '}
+                            {platforms[index % 4]}
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <span className="paidStatus">
+                            Paid
+                        </span>
+
+                    </div>
 
                 </div>
 
-                    ))}
+            ))}
 
         </div>
-
     );
 }
-
-const styles = {
-    card: {
-        backgroundColor: '#ffffff',
-        padding: '20px',
-        borderRadius: '10px',
-        boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-        minHeight: '400px'
-    }
-};
 
 export default OnlineOrdersPanel;
