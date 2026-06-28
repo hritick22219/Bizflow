@@ -40,7 +40,7 @@ function OnlineOrdersPanel() {
 
             <p>Total Orders: {orders.length}</p>
 
-            {orders.slice(-5).map((order) => (
+            {orders.slice(-5).reverse().map((order) => (
 
                 <div key={order._id}>
 
@@ -52,7 +52,7 @@ function OnlineOrdersPanel() {
 
                 </div>
 
-            ))}
+                    ))}
 
         </div>
 
