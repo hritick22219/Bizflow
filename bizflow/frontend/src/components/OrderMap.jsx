@@ -10,7 +10,7 @@ function OrderMap() {
             <iframe
                 title="map"
                 width="100%"
-                height="400"
+                height="250"
                 style={styles.map}
                 src="https://maps.google.com/maps?q=Delhi&t=&z=11&ie=UTF8&iwloc=&output=embed"
             />
@@ -50,19 +50,19 @@ const styles = {
     },
 
     stats: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        marginTop: '20px',
-        gap: '10px'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3,1fr)',
+        gap: '10px',
+        marginTop: '12px'
     },
 
     statCard: {
-        flex: 1,
         textAlign: 'center',
-        padding: '18px',
-        background: '#f8fafc',
+        padding: '10px',
+        background: 'linear-gradient(135deg,#2563eb,#3b82f6)',
+        color: '#fff',
         borderRadius: '12px'
-    }
+        }
 };
 
 export default OrderMap;

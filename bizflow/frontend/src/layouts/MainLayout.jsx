@@ -61,49 +61,48 @@ function MainLayout() {
 const styles = {
     container: {
         background: '#eef2f7',
-        height: '100vh',
-        padding: '15px',
-        overflow: 'hidden',
+        minHeight: '100vh',
+        padding: '12px 20px',
         fontFamily: 'Inter, sans-serif'
     },
 
     title: {
-        fontSize: '30px',
+        fontSize: '28px',
         fontWeight: '700',
         color: '#1e293b',
-        marginBottom: '15px'
+        marginBottom: '12px'
     },
 
     grid: {
         display: 'grid',
         gridTemplateColumns: '1fr 1.3fr 1fr',
         gap: '15px',
-        height: 'calc(100vh - 80px)'
+        height: 'calc(100vh - 90px)'
     },
 
     column: {
         display: 'grid',
-        gridTemplateRows: '1fr 1fr',
+        gridTemplateRows: '48% 48%',
         gap: '15px',
-        height: '100%'
+        minHeight: 0
     },
 
     card: {
-        background: '#ffffff',
+        background: '#fff',
         borderRadius: '18px',
         padding: '18px',
         boxShadow: '0 8px 25px rgba(15,23,42,0.08)',
         border: '1px solid #e2e8f0',
-        overflow: 'auto'
+        overflowY: 'auto'
     },
 
     mapCard: {
-        background: '#ffffff',
+        background: '#fff',
         borderRadius: '18px',
         padding: '18px',
-        height: '100%',
         boxShadow: '0 8px 25px rgba(15,23,42,0.08)',
-        border: '1px solid #e2e8f0'
+        border: '1px solid #e2e8f0',
+        overflow: 'hidden'
     }
 };
 
