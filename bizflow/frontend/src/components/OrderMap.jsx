@@ -15,19 +15,19 @@ function OrderMap() {
                 src="https://maps.google.com/maps?q=Delhi&t=&z=11&ie=UTF8&iwloc=&output=embed"
             />
 
-            <div style={styles.stats}>
+            <div className="mapStats">
 
-                <div style={styles.statCard}>
+                <div className="mapStatCard">
                     <h3>25</h3>
                     <p>Delivered</p>
                 </div>
 
-                <div style={styles.statCard}>
+                <div className="mapStatCard">
                     <h3>18</h3>
                     <p>In Transit</p>
                 </div>
 
-                <div style={styles.statCard}>
+                <div className="mapStatCard">
                     <h3>7</h3>
                     <p>Pending</p>
                 </div>

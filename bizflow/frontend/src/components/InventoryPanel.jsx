@@ -41,7 +41,9 @@ function InventoryPanel() {
 
             {inventory.map((item) => (
 
-                <div key={item._id} style={styles.item}>
+                <div key={item._id} 
+                className="inventoryItem"
+                style={styles.item}>
 
                     <h4>{item.productName}</h4>
 

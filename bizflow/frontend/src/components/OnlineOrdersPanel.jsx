@@ -43,7 +43,7 @@ function OnlineOrdersPanel() {
             {orders.slice(-5).reverse().map((order) => (
 
                 <div key={order._id}>
-
+                    className="orderCard"
                     <p>
                         {order.customer} ordered {' '}
                         {order.items[0].productName} {' '}
