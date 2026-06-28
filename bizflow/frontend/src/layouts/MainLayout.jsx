@@ -59,46 +59,50 @@ function MainLayout() {
 }
 
 const styles = {
-
     container: {
-        backgroundColor: '#f5f7fb',
-        minHeight: '100vh',
-        padding: '30px'
+        background: '#eef2f7',
+        height: '100vh',
+        padding: '15px',
+        overflow: 'hidden',
+        fontFamily: 'Inter, sans-serif'
     },
 
     title: {
-        fontSize: '34px',
+        fontSize: '30px',
         fontWeight: '700',
         color: '#1e293b',
-        marginBottom: '30px'
+        marginBottom: '15px'
     },
 
     grid: {
         display: 'grid',
         gridTemplateColumns: '1fr 1.3fr 1fr',
-        gap: '24px'
+        gap: '15px',
+        height: 'calc(100vh - 80px)'
     },
 
     column: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '24px'
+        display: 'grid',
+        gridTemplateRows: '1fr 1fr',
+        gap: '15px',
+        height: '100%'
     },
 
     card: {
         background: '#ffffff',
         borderRadius: '18px',
-        padding: '24px',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-        border: '1px solid #e2e8f0'
+        padding: '18px',
+        boxShadow: '0 8px 25px rgba(15,23,42,0.08)',
+        border: '1px solid #e2e8f0',
+        overflow: 'auto'
     },
 
     mapCard: {
         background: '#ffffff',
         borderRadius: '18px',
-        padding: '24px',
-        minHeight: '500px',
-        boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+        padding: '18px',
+        height: '100%',
+        boxShadow: '0 8px 25px rgba(15,23,42,0.08)',
         border: '1px solid #e2e8f0'
     }
 };
