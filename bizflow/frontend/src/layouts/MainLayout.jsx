@@ -35,7 +35,6 @@ function MainLayout() {
 
                     <InventoryExpiry />
 
-                    <TopSelling />
 
                 </div>
 
